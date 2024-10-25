@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           # Repository name with owner. For example, actions/checkout
-          repository: 'techlgbt/techlgbt'
+          repository: 'glitch-soc/mastodon'
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -43,4 +43,4 @@ jobs:
           context: .
           platforms: linux/amd64
           tags: |
-            jessebot/mastodon-lgbt-glitch:latest
+            jessebot/mastodon-glitch-soc:latest
