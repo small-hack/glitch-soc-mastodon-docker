@@ -44,3 +44,4 @@ jobs:
           platforms: linux/amd64
           tags: |
             jessebot/mastodon-glitch-soc:latest
+            jessebot/mastodon-glitch-soc:v4.3.2
