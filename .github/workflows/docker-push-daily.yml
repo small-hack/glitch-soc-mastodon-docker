@@ -14,7 +14,6 @@ jobs:
     environment: 'docker-amd64'
     runs-on: ubuntu-latest
     steps:
-      
       - uses: actions/checkout@v4
         name: Checkout glitch-soc/mastodon repo
         with:
@@ -41,7 +40,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build/push
+      - name: Docker Build/push
         uses: docker/build-push-action@v6
         with:
           push: true
@@ -51,3 +50,13 @@ jobs:
           tags: |
             jessebot/mastodon-glitch-soc:latest
             jessebot/mastodon-glitch-soc:${{ steps.glitchsoc.outputs.release }}
+
+      - uses: actions/checkout@v4
+        name: Checkout small-hack/glitch-soc-mastodon-docker
+
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          name: Release ${{ steps.glitchsoc.outputs.release }}
+          body: |
+            Current released docker image is [`jessebot/mastodon-glitch-soc:${{ steps.glitchsoc.outputs.release }}`](https://hub.docker.com/r/jessebot/mastodon-glitch-soc/tags).
