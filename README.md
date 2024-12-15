@@ -1,5 +1,5 @@
 # glitch-soc mastodon docker publishing repo
-<a href="https://github.com/small-hack/glitch-soc-mastodon-docker/tags"><img src="https://img.shields.io/github/v/release/small-hack/glitch-soc-mastodon-docker?style=plastic&labelColor=484848&color=3CA324&logo=GitHub&logoColor=white"></a> [![](https://img.shields.io/docker/pulls/jessebot/mastodon-glitch-soc.svg)](https://cloud.docker.com/u/jessebot/repository/docker/jessebot/mastodon-glitch-soc)
+[![](https://img.shields.io/docker/pulls/jessebot/mastodon-glitch-soc.svg)](https://cloud.docker.com/u/jessebot/repository/docker/jessebot/mastodon-glitch-soc)
 
 A repo to publish the [glitch-soc/mastodon](https://github.com/glitch-soc/mastodon) docker container. glitch-soc is a fork of [mastodon](https://github.com/mastodon/mastodon) Learn more about it [here](https://glitch-soc.github.io/docs/).
 
