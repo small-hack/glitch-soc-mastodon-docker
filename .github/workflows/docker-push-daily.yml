@@ -54,9 +54,9 @@ jobs:
       - uses: actions/checkout@v4
         name: Checkout small-hack/glitch-soc-mastodon-docker
 
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        with:
-          name: Release ${{ steps.glitchsoc.outputs.release }}
-          body: |
-            Current released docker image is [`jessebot/mastodon-glitch-soc:${{ steps.glitchsoc.outputs.release }}`](https://hub.docker.com/r/jessebot/mastodon-glitch-soc/tags).
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # if you don't want to set write permissions use a PAT token
+          WITH_V: false
+          CUSTOM_TAG: ${{ steps.glitchsoc.outputs.release }}
