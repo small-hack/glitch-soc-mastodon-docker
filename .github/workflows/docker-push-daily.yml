@@ -18,10 +18,20 @@ jobs:
     environment: 'docker-amd64'
     runs-on: ubuntu-latest
     steps:
+      
       - uses: actions/checkout@v4
+        name: Checkout glitch-soc/mastodon repo
         with:
           # Repository name with owner. For example, actions/checkout
           repository: 'glitch-soc/mastodon'
+
+      - id: glitchsoc
+        name: Get latest glitch-soc release
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          owner: glitch-soc
+          repo: mastodon
+          excludes: prerelease, draft
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -44,4 +54,4 @@ jobs:
           platforms: linux/amd64
           tags: |
             jessebot/mastodon-glitch-soc:latest
-            jessebot/mastodon-glitch-soc:v4.3.2
+            jessebot/mastodon-glitch-soc:${{ steps.glitchsoc.outputs.release }}
