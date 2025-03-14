@@ -1,3 +1,5 @@
+⚠️ # This repo is no longer maintained, please use the official [glitch-soc/mastodon](https://github.com/glitch-soc/mastodon/pkgs/container/mastodon) image instead
+
 # glitch-soc mastodon docker publishing repo
 [![](https://img.shields.io/docker/pulls/jessebot/mastodon-glitch-soc.svg)](https://cloud.docker.com/u/jessebot/repository/docker/jessebot/mastodon-glitch-soc)
 
